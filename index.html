@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JulPottery | Керамика </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="/dist/style.css">
+</head>
+<body>
+
+<div class="w">
+    <div class="ts">
+        <input type="radio" id="c1" name="ts" checked="checked"/>
+        <label class="t" for="c1"><img src="/photos/photo_1.jpeg"/></label>
+        <input type="radio" id="c2" name="ts"/>
+        <label class="t" for="c2"><img src="/photos/photo_2.jpeg"/></label>
+        <input type="radio" id="c3" name="ts"/>
+        <label class="t" for="c3"><img src="/photos/photo_3.jpeg"/></label>
+<!--        <input type="radio" id="c4" name="ts"/>-->
+<!--        <label class="t" for="c4"><img src="https://images.unsplash.com/photo-1537886492139-052c27acbfee?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=664282a4bd8b8a69cc860420214df3e7&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=60"/></label>-->
+<!--        <input type="radio" id="c5" name="ts"/>-->
+<!--        <label class="t" for="c5"><img src="https://images.unsplash.com/photo-1537886464786-8a0d500b0da6?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=49984d393482456ea5484c3482cc52a9&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=60"/></label>-->
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+
+        const els = document.querySelectorAll("[type='radio']");
+        for (const el of els)
+            el.addEventListener("input", e => reorder(e.target, els));
+        reorder(els[0], els);
+    });
+
+    function reorder(targetEl, els) {
+        const nItems = els.length;
+        let processedUncheck = 0;
+        for (const el of els) {
+            const containerEl = el.nextElementSibling;
+            if (el === targetEl) {//checked radio
+                containerEl.style.setProperty("--w", "100%");
+                containerEl.style.setProperty("--l", "0");
+            }
+            else {//unchecked radios
+                containerEl.style.setProperty("--w", `${100/(nItems-1)}%`);
+                containerEl.style.setProperty("--l", `${processedUncheck * 100/(nItems-1)}%`);
+                processedUncheck += 1;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
