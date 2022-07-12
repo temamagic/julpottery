@@ -1,0 +1,32 @@
+{{template "header.html" .}}
+<!--   *** PORTFOLIO ***-->
+<div class="col-md-8 col-lg-9 content-column">
+    <div class="small-navbar d-flex d-md-none">
+        <button type="button" data-toggle="offcanvas" class="btn btn-outline-primary">
+            <i class="fa fa-align-left mr-2"></i>Меню
+        </button>
+        <h1 class="small-navbar-heading">
+            <a href="index.html">{{.title}}</a>
+        </h1>
+    </div>
+    <div class="grid row">
+        {{ range $item := .items}}
+        <div class="col-md-6 col-lg-3 grid-item">
+            <div class="box-masonry">
+                <a href="posts/{{$item.Path}}/" title="" class="box-masonry-image with-hover-overlay">
+                    <img src="posts/{{$item.Path}}/{{$item.BasePhoto}}" alt="{{$item.Title}}" class="img-fluid">
+                </a>
+                <div class="box-masonry-hover-text-header">
+                    <a href="posts/{{$item.Path}}/" class="tile-link"></a>
+                    <h4>{{$item.Title}}</h4>
+                    <div class="box-masonry-desription">
+                        <p>{{$item.Description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{end}}
+    </div>
+</div>
+<!--   *** PORTFOLIO END ***-->
+{{template "footer.html" .}}

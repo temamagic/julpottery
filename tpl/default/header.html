@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<base href="/">
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{.title}}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="dist/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="dist/vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Google fonts - Roboto-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,400italic">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="dist/vendor/owl.carousel/assets/owl.carousel.css">
+    <link rel="stylesheet" href="dist/vendor/owl.carousel/assets/owl.theme.default.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="dist/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="dist/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="dist/img/favicon.png">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="all">
+    <div class="container-fluid">
+        <div class="row row-offcanvas row-offcanvas-left">
+            <!--   *** SIDEBAR ***-->
+            <div id="sidebar" class="col-md-4 col-lg-3 sidebar-offcanvas">
+                <div class="sidebar-content">
+                    <h1 class="sidebar-heading">
+                        <a href="index.html">{{.title}}</a>
+                    </h1>
+                    <p class="sidebar-p">{{.sidebar1}}</p>
+                    <p class="sidebar-p">{{.sidebar2}}</p>
+<!--                    <ul class="sidebar-menu">-->
+                        <!-- Link-->
+<!--                        <li class="sidebar-item">-->
+<!--                            <a href="index.html" class="sidebar-link active">Все работы</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+                    <p class="social">
+                        <a href="#" data-animate-hover="pulse"
+                           class="external telegram">
+                            <i class="fa fa-telegram"></i>
+                        </a>
+                    </p>
+                    <div class="copyright text-center text-md-left">
+                        <p class="credit">&copy;{{.year}} {{.copy}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--   *** SIDEBAR END ***  -->

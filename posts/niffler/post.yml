@@ -1,0 +1,8 @@
+title: "Нюхль"
+description: |
+  Смешной зверек из фильма Фантастические твари
+base_photo: "1.jpg"
+draft: false
+photos:
+  - 1.jpg
+  - 2.jpg

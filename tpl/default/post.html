@@ -1,0 +1,25 @@
+{{template "header.html" .}}
+<!--   *** DETAIL ***-->
+<div class="col-md-8 col-lg-9 content-column white-background">
+    <div class="small-navbar d-flex d-md-none">
+        <button type="button" data-toggle="offcanvas" class="btn btn-outline-primary"><i
+                class="fa fa-align-left mr-2"></i>Меню
+        </button>
+        <h1 class="small-navbar-heading"><a href="index.html">{{.title}}</a></h1>
+    </div>
+    <div class="row">
+        <div class="col-xl-10">
+            <div class="content-column-content">
+                <h1>{{.post.Title}}</h1>
+                <p class="lead">{{.post.Description}}</p>
+                <div id="main-slider" class="owl-carousel owl-theme">
+                    {{ range $photo := .post.Photos}}
+                    <div class="item"><img src="posts/{{$.post.Path}}/{{$photo}}" alt="" class="img-fluid"></div>
+                    {{ end }}
+                </div>
+                <!-- /#main-slider-->
+            </div>
+        </div>
+    </div>
+</div>
+{{template "footer.html" .}}
