@@ -1,0 +1,47 @@
+{{template "header.html" .}}
+<header>
+
+    <div class="container">
+
+        <div class="profile">
+
+            <div class="profile-image">
+
+                <img src="/posts/bowie-head/1.jpg" alt="" width="152" height="152">
+
+            </div>
+
+            <div class="profile-user-settings">
+                <h1 class="profile-user-name">{{.title}}</h1>
+                <button class="btn profile-edit-btn"><a href="/">Ко всем работам</a></button>
+            </div>
+            <!--            <div class="profile-stats">-->
+
+            <!--                <ul>-->
+            <!--                    <li></li>-->
+            <!--                </ul>-->
+
+            <!--            </div>-->
+            <div class="profile-bio">
+                <p><span class="profile-real-name">{{.post.Title}}</span> <br><br>{{.post.Description}}🏕️</p>
+            </div>
+        </div>
+        <!-- End of profile section -->
+    </div>
+    <!-- End of container -->
+</header>
+<main>
+    <div class="container">
+        <div class="gallery">
+            {{ range $photo := .post.Photos}}
+            <div class="gallery-item" tabindex="0">
+                <img src="posts/{{$.post.Path}}/{{$photo}}" class="gallery-image" alt="">
+            </div>
+            {{ end }}
+        </div>
+        <!-- End of gallery -->
+    </div>
+    <!-- End of container -->
+
+</main>
+{{template "footer.html" .}}
